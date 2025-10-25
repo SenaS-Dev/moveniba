@@ -1,5 +1,6 @@
 package com.example.moveniba;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,8 +62,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
 
+        ansA.setBackgroundColor(Color.WHITE);
+        ansB.setBackgroundColor(Color.WHITE);
+        ansC.setBackgroundColor(Color.WHITE);
+        ansD.setBackgroundColor(Color.WHITE);
+
+
+
+        Button clickedButton = (Button) view;
+        if(clickedButton.getId()==R.id.submit_btn){
+            currentQuestionIndex++;
+            loadnewquestion();
+            if (selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])){
+                score++;
+            }
+
+
+        }else{
+            //choices button clicked
+            selectedAnswer = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.MAGENTA);
+
+        }
     }
     void loadnewquestion(){
         questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
