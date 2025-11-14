@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/total_question"
-        android:text="Total Questions"
+        android:text=" Questões totais"
         android:layout_centerHorizontal="true"
         android:textSize="20dp" />
 
@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/submit_btn"
-        android:text="Submit"
+        android:text="Responder"
         android:layout_below="@id/choices_layout"
         android:layout_margin="40dp"/>
 
